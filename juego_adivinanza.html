@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego con JS</title>
+</head>
+<body>
+    <h1>Juego de adivinanzas</h1>
+    <script>
+        function saltar_linea(){
+            document.write("<br>");
+            document.write("<br>");
+            document.write("<br>");
+        }
+
+        function imprimir(frase){
+            document.write(frase);
+            saltar_linea();
+        }
+        
+        var numero_sistema = Math.round(Math.random()*10); //mathrandom es para que me de un numero aleatorio la maquina
+        var intentos = 3;
+        var contador = 1;
+        while (contador <= intentos){
+        var numero_lanzado = parseInt(prompt("Introduzca un numero entre 0-10"));
+        if (numero_sistema ==numero_lanzado){
+            alert("Acertaste, en el intento numero " +intentos);
+            break;
+        } else {
+            alert("Lo siento, perdiste vuelve a intentarlo");
+        }
+        contador++;
+    }
+    if(numero_sistema==numero_lanzado){
+        imprimir("Usted acerto en el intento numero " +contador)
+    } else {
+        imprimir("Lo siento, usted fallo. El numero era " +numero_sistema);
+    }
+    </script>
+</body>
+</html>
